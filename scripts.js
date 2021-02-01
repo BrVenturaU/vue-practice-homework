@@ -10,7 +10,7 @@ const app = new Vue({
         inscripcion: inscripcionModel
     },
     computed:{
-        cantidadInscripciones: function(){
+        cantidadInscripciones(){
             var cantidad = 0;
             if(this.inscripciones != null)
                 this.inscripciones.forEach(ins => {cantidad++});
