@@ -4,8 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción de materias</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
     
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Inscripción de materias</h1>
+            </div>
+            <div class="col-12">
+                <div id="app" class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="#" class="container">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <div class="mb-3 form-group">
+                                            <label for="nombreAlumno">Nombre alumno:</label>
+                                            <input type="text" id="nombreAlumno" name="nombreAlumno" class="form-control" placeholder="Digita el nombre del alumno..." v-model="inscripcion.alumno" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="mb-3 form-group">
+                                            <label for="nombreDocente">Nombre docente:</label>
+                                            <input type="text" id="nombreDocente" name="nombreDocente" class="form-control" placeholder="Digita el nombre del docente.." v-model="inscripcion.docente" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="mb-3 form-group">
+                                            <label for="ciclo">Selecciona el ciclo:</label>
+                                            <select class="form-control" id="ciclo" v-model="inscripcion.ciclo">
+                                                <option v-for="ciclo of ciclos" v-bind:key="ciclo" v-bind:value="ciclo">{{ciclo}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="mb-3 form-group">
+                                            <label for="materia">Selecciona la materia:</label>
+                                            <select class="form-control" id="materia" v-model="inscripcion.materia">
+                                                <option v-for="materia of materias" v-bind:key="materia" v-bind:value="materia">{{materia}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-12 col-sm-6">
+                                        <div class="mb-3 form-group">
+                                            <label for="facultad">Selecciona la facultad:</label>
+                                            <select class="form-control" id="facultad" v-model="inscripcion.facultad">
+                                                <option v-for="facultad of facultades" v-bind:key="facultad" v-bind:value="facultad">{{facultad}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" class="btn btn-success" v-on:click="inscribir()">Inscribir</button>
+                            </form>
+                        </div>
+                        <div class="col-12">
+                            <h2>Inscripciones
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-sm-3 mb-2" v-for="inscripcion of inscripciones">
+                                    
+                                    <div class="card text-white bg-dark">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Inscripción</h3>
+                                        </div>
+                                        <ul class="list-group list-group-flush text-dark">
+                                            <li class="list-group-item"><strong>Alumno:</strong> {{inscripcion.alumno}}</li>
+                                            <li class="list-group-item"><strong>Docente:</strong> {{inscripcion.docente}}</li>
+                                            <li class="list-group-item"><strong>Ciclo:</strong> {{inscripcion.ciclo}}</li>
+                                            <li class="list-group-item"><strong>Materia:</strong> {{inscripcion.materia}}</li>
+                                            <li class="list-group-item"><strong>Facultad:</strong> {{inscripcion.facultad}}</li>
+                                          </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
