@@ -8,6 +8,13 @@ const app = new Vue({
         inscripciones: [],
         inscripcion: inscripcionModel
     },
+    computed:{
+        cantidadInscripciones: function(){
+            var number = 0
+            this.inscripciones.forEach(ins => {number++});
+            return number;
+        }
+    },
     methods: {
         inscribir(){
             this.inscripciones.push({
